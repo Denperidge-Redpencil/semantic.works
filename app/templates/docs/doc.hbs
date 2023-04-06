@@ -1,5 +1,4 @@
 <h1>{{@model.repo.title}}</h1>
-{{this.revision}}
 <PowerSelect
     @selected={{this.revision}}
     @options={{@model.repo.revisions}}
@@ -22,4 +21,8 @@
 
 <hr>
 
+<zero-md>
+    <script type="text/markdown">
 {{this.revision.readme}}
+    </script>
+</zero-md>
