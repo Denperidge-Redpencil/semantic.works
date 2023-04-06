@@ -1,28 +1,20 @@
-<h1>{{@model.repo.title}}</h1>
+<h1>{{@model.title}}</h1>
 <PowerSelect
     @selected={{this.revision}}
-    @options={{@model.repo.revisions}}
+    @options={{@model.revisions}}
     @onChange={{action selectRevision}} as |name|>
     {{name}}
 </PowerSelect>
-<!--
-{{#power-select 
-    selected=this.revision
-    options=@model.revisions
-    onchange=(action "selectRevision")
-    as |name|}}
-    {{name}}
-{{/power-select}}
--->
-<blockquote>{{@model.repo.description}}</blockquote>
+<blockquote>{{@model.description}}</blockquote>
 
-<a href="{{@model.revision.imageUrl}}">Image</a>
-<a href="{{@model.revision.repoUrl}}">Repository</a>
+<hr>
+<a href="{{this.revision.imageUrl}}">Image</a>
+<a href="{{this.revision.repoUrl}}">Repository</a>
 
 <hr>
 
 <zero-md>
     <script type="text/markdown">
-{{this.revision.readme}}
+        {{this.revision.readme}}
     </script>
 </zero-md>
