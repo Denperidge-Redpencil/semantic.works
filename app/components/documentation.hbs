@@ -1,12 +1,12 @@
 <div class="pure-g">
     <div class="pure-u-1-5">
         <div class='sw-docs-menu'>
-            <MenuItems @categories={{@categories}} @level={{0}} @clickHandler={{this.changeDoc}}/>
+            <MenuItems @docTree={{@docTree}} @level={{0}} @clickHandler={{this.changeDoc}}/>
         </div>
     </div>
     <div class="pure-u-4-5">
         <div class='sw-docs-contents'>
-            {{this.currentDoc}}
+            {{outlet}}
         </div>
     </div>
 </div>

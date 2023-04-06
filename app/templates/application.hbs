@@ -2,13 +2,13 @@
   <div class="header">
     <div class="search" style="visibility: hidden">
       {{!-- Hide the search since we don't have a search function yet --}}
-      <img src="./assets/images/search.png" class="img" alt="Search icon" />
+      <img src="{{ROOTURL}}/assets/images/search.png" class="img" alt="Search icon" />
       <div class="text">Search the docs...</div>
     </div>
     <LinkTo @route="index">
       <div class="logo">
         <div class="text">SEMANTIC</div>
-        <img src="./assets/images/logo.png" class="img" alt="Semantic works" />
+        <img src="{{ROOTURL}}/assets/images/logo.png" class="img" alt="Semantic works" />
         <div class="text">WORKS</div>
       </div>
     </LinkTo>
@@ -22,7 +22,7 @@
   <div class="slant">
     {{!-- TODO: this should probably become a div with a background image to make it nicely accessible --}}
     {{!-- template-lint-disable require-valid-alt-text --}}
-    <img class="img" src="assets/images/slant.png" />
+    <img class="img" src="{{ROOTURL}}/assets/images/slant.png" />
   </div>
 </div>
 {{outlet}}

@@ -11,12 +11,17 @@ export default class DocsRoute extends Route {
             if (category == undefined) {
                 categories.push({
                     name: repoCategory,
-                    repos: [repo]
+                    value: [repo]
                 })
             } else {
-                category.repos.push(repo);
+                category.value.push({
+                    name: repo.title,
+                    link: true,
+                    value: repo
+                });
             }
         });
+
 
         return categories;
 
