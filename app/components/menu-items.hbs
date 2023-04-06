@@ -1,10 +1,11 @@
-{{#each @docTree as |leaf|}}
-  {{#if leaf.value}}
-    {{#if leaf.link}}
-      {{this.whitespace}}<button type="button" {{on "click" (fn @clickHandler leaf.value)}}>{{leaf.name}}</button><br>
-    {{else}}
-      {{this.whitespace}}{{leaf.name}}<br>
-    {{/if}}
+{{#each @categories as |category|}}
+  {{this.whitespace}}{{category.name}}<br>
+
+  {{#each category.repos as |repo|}}
+    {{this.whitespace}}<button type="button" {{on "click" (fn @clickHandler repo)}}>{{repo.title}}</button><br>
+
+    
     <MenuItems @docTree={{leaf.value}} @level={{this.nextLevel}} @clickHandler={{@clickHandler}}/>
-  {{/if}}
+  {{/each}}
+
 {{/each}}
