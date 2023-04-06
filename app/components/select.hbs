@@ -1,0 +1,6 @@
+<select {{on "change" this.valueChanged }}>
+    {{#each @options as |value|}}
+    <option>{{value}}</option>
+    {{/each}}
+</select>
+{{yield}}
