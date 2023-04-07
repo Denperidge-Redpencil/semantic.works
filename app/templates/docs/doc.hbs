@@ -2,7 +2,8 @@
 <PowerSelect
     @selected={{this.revision}}
     @options={{@model.revisions}}
-    @onChange={{action selectRevision}} as |name|>
+    @searchField="repoTag"
+    @onChange={{this.selectRevision}} as |name|>
     {{name}}
 </PowerSelect>
 <blockquote>{{@model.description}}</blockquote>
