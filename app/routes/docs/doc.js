@@ -7,7 +7,6 @@ export default class DocsDocRoute extends Route {
 
 
     model(params) {
-        console.log("ee")
         let repoName = params.name;
 
         return this.store.query("repo", {
