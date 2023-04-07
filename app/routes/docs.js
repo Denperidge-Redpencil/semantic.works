@@ -25,23 +25,26 @@ export default class DocsRoute extends Route {
 
             let category = categories.find(category => category.name == repoCategory);
             if (category == undefined) {
-                categories.push({
+                category = {
                     name: repoCategory,
-                    value: [repo]
-                })
-            } else {
-                category.value.push({
-                    name: repo.title,
-                    link: true,
-                    value: repo
-                });
+                    value: []
+                }
+                categories.push(category);
             }
+
+            category.value.push({
+                name: repo.title,
+                link: true,
+                value: repo
+            });
+            
         });
 
         categories.sort(function(a, b) {
             return CATEGORY_WEIGHTS[a.name] > CATEGORY_WEIGHTS[b.name]
         })
 
+        console.log(categories)
 
         return categories;
 
