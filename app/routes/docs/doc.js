@@ -1,7 +1,11 @@
 import Route from '@ember/routing/route';
 import { tracked } from 'tracked-built-ins';
+import { inject as service } from '@ember/service'
 
 export default class DocsDocRoute extends Route {
+    @service router;
+
+
     model(params) {
         console.log("ee")
         let repoName = params.name;
@@ -16,13 +20,28 @@ export default class DocsDocRoute extends Route {
         })
     }
 
+
+    async sendRevisionToController(controller, model, transition) {
+        let revisionParam = transition.to.queryParams.revision;
+        let revisions = await model.revisions;
+        let revisionObject = revisions.find((revision) => revision.repoTag == revisionParam);
+
+        if (revisionObject == null) {
+            revisionObject = revisions.get("firstObject");
+        }
+
+        controller.revision = revisionObject;
+    }
+
     async setupController(controller, model, transition) {
         super.setupController(controller, model, transition)
 
-        let revisionParam = transition.to.queryParams.revision;
-        let revisions = await model.revisions;
-        let revisionObject = revisions.find((revision) => revision.repoTag == revisionParam); //controller.revision);
+        this.router.on("routeWillChange", async (transition) => {
+            this.sendRevisionToController(controller, model, transition)
+        })
 
-        controller.revision = revisionObject;
+        this.sendRevisionToController(controller, model, transition);
+
+
     }
 }
