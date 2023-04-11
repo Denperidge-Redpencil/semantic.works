@@ -35,9 +35,11 @@ export default class DocsDocRoute extends Route {
     async setupController(controller, model, transition) {
         super.setupController(controller, model, transition)
 
+        /*
         this.router.on("routeWillChange", async (transition) => {
             this.sendRevisionToController(controller, model, transition)
         })
+        */
 
         this.sendRevisionToController(controller, model, transition);
 
