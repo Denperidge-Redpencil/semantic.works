@@ -14,7 +14,7 @@ const CATEGORY_EXCLUSIONS = [
 
 export default class DocsRoute extends Route {
     async model() {
-        let repos = await this.store.findAll("repo");
+        let repos = await this.store.findAll("repo", {reload: true});
         let categories = [];
         repos.forEach(repo => {
             let repoCategory = repo.category.substring(repo.category.lastIndexOf("/") + 1);
