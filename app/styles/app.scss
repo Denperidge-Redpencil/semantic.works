@@ -314,4 +314,15 @@
   height: auto;
 }
 
+.icon {
+  //height: 100%;
+  width: 20px;
+  margin-right: 10px;
+  //display: inline;
+  object-fit: contain;
+  float: left;
+  vertical-align: baseline;
+  display: inline-block;
+}
+
 @import "ember-power-select";
