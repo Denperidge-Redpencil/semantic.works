@@ -6,18 +6,41 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     autoImport: {
       alias: {
-        "prismjs": "prismjs/component",
-        //"prism-core": "prismjs/components/prism-core",
+        //"prismjs": "prismjs",
         //'prism-core': "prismjs/components/prism-core",
         'zero-md': "zero-md/dist/zero-md.min",
-      } 
+      } ,
+      
+      skipBabel: [
+        {
+          package: 'babel-plugin-prismjs',
+          semverRange: '*',
+        },
+      ],
+
+      webpack: {
+        target: 'web',
+        node: {
+          global: true,
+          fs: 'empty'
+        },
+        resolve: {
+          extensions: ['.js'],
+          symlinks: false
+        }
+      }
+      
     },
     babel: {
       plugins: [
+        //require.resolve('ember-auto-import/babel-plugin'),
         [ 
           "prismjs", 
           {
-            "languages": ["javascript", "css", "bash", "lisp"]
+            "languages": ["javascript", "css", "bash", "lisp"],
+            "plugins": [],
+            "theme": "tomorrow",
+            "css": true
           }
         ]
       ]
