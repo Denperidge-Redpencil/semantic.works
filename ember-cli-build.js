@@ -6,22 +6,9 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     autoImport: {
       alias: {
-        "prismjs": "prismjs/component",
-        //"prism-core": "prismjs/components/prism-core",
-        //'prism-core': "prismjs/components/prism-core",
         'zero-md': "zero-md/dist/zero-md.min",
       } 
     },
-    babel: {
-      plugins: [
-        [ 
-          "prismjs", 
-          {
-            "languages": ["javascript", "css", "bash", "lisp"]
-          }
-        ]
-      ]
-    },    
     codemirror: {
       modes: ['javascript', 'ruby']
     }
