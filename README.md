@@ -1,7 +1,10 @@
 # semantic.works
 
-The front-end code for [semantic.works](https://semantic.works)!
-
+A website built to be...
+- ... an introduction & documentation to [semantic.works](https://semantic.works) and our microservice tech stack
+- ... a live example of the power of [Ember.js](https://emberjs.com/) and our microservice [app-mu-info](docs/app-mu-info)
+    - ... the latter of which allows us to write our documentation inside of our repositories and have it update everywhere, as well as switch between Git hosts where needed
+- ... be independent of CDN's (w.i.p., see #3)
 
 ## How-To
 
