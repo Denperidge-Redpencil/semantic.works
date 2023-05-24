@@ -5,7 +5,6 @@ import { inject as service } from '@ember/service'
 export default class DocsDocRoute extends Route {
     @service router;
 
-
     model(params) {
         let repoName = params.name;
 
@@ -30,6 +29,7 @@ export default class DocsDocRoute extends Route {
         }
 
         controller.revision = revisionObject;
+        controller.section = revisionObject.sections[0];
     }
 
     async setupController(controller, model, transition) {
