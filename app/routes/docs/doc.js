@@ -10,7 +10,7 @@ export default class DocsDocRoute extends Route {
 
         return this.store.query("repo", {
             filter: {
-                "title": repoName
+                ":exact:title": repoName
             },
             include: "revisions"
         }).then(function(repos) {
