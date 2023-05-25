@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 
+/* Semantic.works/tutorial ; include the tutorials from mu-project */
+
 export default class TutorialRoute extends Route {
     model() {
         return this.store.query("repo", {
@@ -10,9 +12,8 @@ export default class TutorialRoute extends Route {
         }).then(function(repos) {
             let repo = repos.get("firstObject");        
             return repo.revisions.then((revisions) => {
-                let readme = revisions.get("firstObject").readme;
-                let tutorials = new RegExp("Tutorials((.|\n)*)", "gmi").exec(readme)
-                return tutorials
+                // Get revision, remove leading # because otherwise it renders for some reason
+                return revisions.get("firstObject").tutorials.replace(/^#{1,} /, "");
             });
         });
     }
