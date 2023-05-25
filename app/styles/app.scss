@@ -325,3 +325,25 @@ footer{
 }
 
 @import "ember-power-select";
+
+@keyframes loading {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  img {
+    width: 200px;
+    height: auto;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;    
+    animation-timing-function: ease-in-out;
+  }
+
+}
