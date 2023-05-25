@@ -12,8 +12,7 @@ export default class TutorialRoute extends Route {
         }).then(function(repos) {
             let repo = repos.get("firstObject");        
             return repo.revisions.then((revisions) => {
-                // Get revision, remove leading # because otherwise it renders for some reason
-                return revisions.get("firstObject").tutorials.replace(/^#{1,} /, "");
+                return revisions.get("firstObject").tutorials;
             });
         });
     }

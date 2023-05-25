@@ -1,31 +1,32 @@
-<div class="sw-header">
+<header>
   <div class="header">
     <div class="search" style="visibility: hidden">
       {{!-- Hide the search since we don't have a search function yet --}}
       <img src="{{ROOTURL}}/assets/images/search.png" class="img" alt="Search icon" />
       <div class="text">Search the docs...</div>
     </div>
+
     <LinkTo @route="index">
       <div class="logo">
-        <div class="text">SEMANTIC</div>
-        <img src="{{ROOTURL}}/assets/images/logo.png" class="img" alt="Semantic works" />
-        <div class="text">WORKS</div>
+        <span>Semantic</span>
+        <img src="{{ROOTURL}}/assets/images/logo.png" alt="Semantic works logo" />
+        <span>Works</span>
       </div>
     </LinkTo>
-    <div class="menu">
-      <div class="item"><LinkTo @route="docs">Documentation</LinkTo></div>
-      <div class="item"><LinkTo @route="tutorial">Tutorial</LinkTo></div>
-      <div class="item"><a href="https://mu.semte.ch/">Blog</a></div>
-      <div class="item"><a href="https://github.com/mu-semtech/">GitHub</a></div>
-    </div>
+
+    <nav>
+      <ul>
+        <li><LinkTo @route="docs">Documentation</LinkTo></li>
+        <li><LinkTo @route="tutorial">Tutorial</LinkTo></li>
+        <li><a href="https://mu.semte.ch/">Blog</a></li>
+        <li><a href="https://github.com/mu-semtech/">GitHub</a></li>
+      </ul>
+    </nav>
+
   </div>
-  <div class="slant">
-    {{!-- TODO: this should probably become a div with a background image to make it nicely accessible --}}
-    {{!-- template-lint-disable require-valid-alt-text --}}
-    <img class="img" src="{{ROOTURL}}/assets/images/slant.png" />
-  </div>
-</div>
+  <Slant/>
+</header>
 {{outlet}}
-<div class='sw-footer'>
+<footer>
   &copy; Copyright 2023 – semantic.works
-</div>
+</footer>

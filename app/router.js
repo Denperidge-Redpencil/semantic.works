@@ -11,5 +11,4 @@ Router.map(function() {
     this.route('doc', {path: ':name'});
   });
   this.route('tutorial');
-  this.route('test');
 });
