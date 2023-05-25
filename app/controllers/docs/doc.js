@@ -11,7 +11,8 @@ export default class DocsDocController extends Controller {
         this.target.currentState.router.transitionTo({
             queryParams: { revision: revision }
         })
-        this.section = revision.sections[0];
+
+        this.section = this.section || revision.sections[0];
     }
 
     @action

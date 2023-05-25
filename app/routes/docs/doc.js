@@ -21,6 +21,8 @@ export default class DocsDocRoute extends Route {
 
     async sendRevisionToController(controller, model, transition) {
         let revisionParam = transition.to.queryParams.revision;
+        let sectionParam = transition.to.queryParams.section;
+        
         let revisions = await model.revisions;
         let revisionObject = revisions.find((revision) => revision.repoTag == revisionParam);
 
@@ -29,7 +31,7 @@ export default class DocsDocRoute extends Route {
         }
 
         controller.revision = revisionObject;
-        controller.section = revisionObject.sections[0];
+        controller.section = sectionParam || revisionObject.sections[0];
     }
 
     async setupController(controller, model, transition) {
