@@ -1,1 +1,14 @@
-<Documentation @docTree={{model}}/>
+{{page-title "Docs"}}
+
+<div class="pure-g">
+    <div class="pure-u-1-5">
+        <div class='sw-docs-menu'>
+            <MenuItems @docTree={{model}} @level={{0}}/>
+        </div>
+    </div>
+    <div class="pure-u-4-5">
+        <div class='sw-docs-contents'>
+            {{outlet}}
+        </div>
+    </div>
+</div>

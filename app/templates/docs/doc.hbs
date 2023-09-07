@@ -1,9 +1,17 @@
+{{page-title @model.title}}
+
 <h1>{{@model.title}}</h1>
 <PowerSelect
-    @selected={{this.revision}}
+    @selected={{this.revisionRepoTag}}
     @options={{@model.revisions}}
     @searchField="repoTag"
     @onChange={{this.selectRevision}} as |name|>
+    {{name}}
+</PowerSelect>
+<PowerSelect
+    @selected={{this.section}}
+    @options={{this.revision.sections}}
+    @onChange={{this.selectSection}} as |name|>
     {{name}}
 </PowerSelect>
 <blockquote>{{@model.description}}</blockquote>
@@ -15,5 +23,5 @@
 <hr>
 
 <zero-md>
-    <script type="text/markdown">{{this.revision.readme}}</script>
+    <script type="text/markdown">{{get this.revision this.section}}</script>
 </zero-md>
