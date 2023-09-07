@@ -1,22 +1,28 @@
 import Route from '@ember/routing/route';
 import { tracked } from 'tracked-built-ins';
 import { inject as service } from '@ember/service'
+import {action} from '@ember/object';
 
 export default class DocsDocRoute extends Route {
     @service router;
 
-    model(params) {
+    defaultBranch;
+
+    async model(params) {
         let repoName = params.name;
 
-        return this.store.query("repo", {
+        let repo = (await this.store.query("repo", {
             filter: {
                 ":exact:title": repoName
             },
             include: "revisions"
-        }).then(function(repos) {
-            return repos.get("firstObject");            
-        })
+        })).get("firstObject");
+
+        this.defaultBranch = repo.defaultBranch;
+
+        return repo;
     }
+
 
 
     async sendRevisionToController(controller, model, transition) {
@@ -27,11 +33,13 @@ export default class DocsDocRoute extends Route {
         let revisionObject = revisions.find((revision) => revision.repoTag == revisionParam);
 
         if (revisionObject == null) {
-            revisionObject = revisions.get("firstObject");
+            revisionObject = revisions.find((revision) => revision.repoTag == this.defaultBranch) || revisions.get("firstObject");   
         }
 
         controller.revision = revisionObject;
+        controller.revisionRepoTag = revisionObject.repoTag;
         controller.section = sectionParam || revisionObject.sections[0];
+        console.log(sectionParam, revisionObject.sections[0], controller.section)
     }
 
     async setupController(controller, model, transition) {
