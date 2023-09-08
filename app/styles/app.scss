@@ -20,6 +20,10 @@ header {
     > * {
       flex-grow: 1;
     }
+    *:focus {
+      outline: red dashed 1px;
+      outline-offset: 3px;
+    }
 
     .search{
       display: inline-flex;
