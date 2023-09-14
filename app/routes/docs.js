@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import {service, setHeadData} from '../utils';
 
 const CATEGORY_WEIGHTS = {
     core: 0,
@@ -13,6 +14,8 @@ const CATEGORY_EXCLUSIONS = [
 ];
 
 export default class DocsRoute extends Route {
+    @service headData;
+    
     async model() {
         let repos = await this.store.findAll("repo", {reload: true});
         let categories = [];
@@ -54,5 +57,9 @@ export default class DocsRoute extends Route {
         return this.store.findAll("repo", { include: "repo-revisions"}).map((val) => 
             val.title
         );*/
+    }
+
+    afterModel() {
+        setHeadData(this, "Docs");
     }
 }

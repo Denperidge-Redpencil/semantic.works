@@ -2,11 +2,13 @@ import Route from '@ember/routing/route';
 import { tracked } from 'tracked-built-ins';
 import { inject as service } from '@ember/service'
 import {action} from '@ember/object';
+import { setHeadData } from '../../utils';
 
 export default class DocsDocRoute extends Route {
     @service router;
+    @service headData;
 
-    defaultBranch;
+    repo;
 
     async model(params) {
         let repoName = params.name;
@@ -18,11 +20,17 @@ export default class DocsDocRoute extends Route {
             include: "revisions"
         })).get("firstObject");
 
-        this.defaultBranch = repo.defaultBranch;
+        this.repo = repo;
 
         return repo;
     }
 
+    afterModel() {
+        setHeadData(
+            this, 
+            [this.repo.title, "docs"],
+            this.repo.description)
+    }
 
 
     async sendRevisionToController(controller, model, transition) {
@@ -33,7 +41,7 @@ export default class DocsDocRoute extends Route {
         let revisionObject = revisions.find((revision) => revision.repoTag == revisionParam);
 
         if (revisionObject == null) {
-            revisionObject = revisions.find((revision) => revision.repoTag == this.defaultBranch) || revisions.get("firstObject");   
+            revisionObject = revisions.find((revision) => revision.repoTag == this.repo.defaultBranch) || revisions.get("firstObject");   
         }
 
         controller.revision = revisionObject;

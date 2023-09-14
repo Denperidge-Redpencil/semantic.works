@@ -20,6 +20,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    meta: {
+      description: "An open-source technology stack of re-usable, linked-data powered microservices",
+      locale: "en_US",
+      siteName: "semantic.works"
     }
   };
 

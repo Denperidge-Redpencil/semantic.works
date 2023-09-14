@@ -1,0 +1,13 @@
+{{!-- 
+  Add content you wish automatically added to the documents head
+  here. The 'model' available in this template can be populated by
+  setting values on the 'head-data' service. 
+--}}
+
+<title>{{this.model.title}}</title> 
+<meta property="og:title" content={{this.model.title}}/>
+<meta property="og:description" content={{this.model.description}} />
+<meta property="og:locale" content={{this.model.locale}} />
+<meta property="og:site_name" content={{this.model.siteName}} />
+<meta property="og:image" content="{{rootURL}}/{{this.model.image}}" />
+
