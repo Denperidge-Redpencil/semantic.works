@@ -1,11 +1,20 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const env = process.env.EMBER_ENV || 'development';
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     codemirror: {
       modes: ['javascript', 'ruby']
+    },
+
+    'ember-cli-favicon': {
+      iconPath: 'favicon.png',  // Relative to public/
+
+      faviconsConfig: {
+        path: env == 'production' ? '/assets/' : '/'
+      }
     }
     // Add options here
   });
