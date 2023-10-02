@@ -5,9 +5,12 @@
 --}}
 
 <title>{{this.model.title}}</title> 
-<meta property="og:title" content={{this.model.title}}/>
+<meta property="og:type" content={{this.model.type}}/>
+<meta property="og:title" content={{this.model.ogTitle}}/>
 <meta property="og:description" content={{this.model.description}} />
 <meta property="og:locale" content={{this.model.locale}} />
 <meta property="og:site_name" content={{this.model.siteName}} />
-<meta property="og:image" content="{{rootURL}}/{{this.model.image}}" />
+<meta property="og:url" content="{{this.model.href}}" />
+<meta property="og:image" content="{{this.model.origin}}/{{this.model.image}}" />
+<meta property="og:image:alt" content="The semantic.works logo: 6 dots connected in a cubic shape" />
 

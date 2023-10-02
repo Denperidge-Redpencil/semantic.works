@@ -1,8 +1,11 @@
 import Route from '@ember/routing/route';
+import { service, setHeadData } from '../utils';
 
 /* Semantic.works/tutorial ; include the tutorials from mu-project */
 
 export default class TutorialRoute extends Route {
+    @service headData;
+
     model() {
         return this.store.query("repo", {
             filter: {
@@ -15,5 +18,10 @@ export default class TutorialRoute extends Route {
                 return revisions.get("firstObject").tutorials;
             });
         });
+    }
+
+    afterModel() {
+        console.log(this)
+        setHeadData(this, "Tutorial")
     }
 }
