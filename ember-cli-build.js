@@ -13,7 +13,7 @@ module.exports = function(defaults) {
       iconPath: 'favicon.png',  // Relative to public/
 
       faviconsConfig: {
-        path: env == 'production' ? '/assets/' : '/'
+        path: '/assets/' //env == 'production' ? '/assets/' : '/'
       }
     }
     // Add options here

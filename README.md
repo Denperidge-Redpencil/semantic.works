@@ -26,9 +26,14 @@ The production environment (used in npm start & npm run build), the favicon is s
 This project uses data from app-mu-info, and thus the models defined in [app/models/](app/models/) adhere to this. You can [view the GitHub repository of app-mu-info here](https://github.com/Denperidge-Redpencil/app-mu-info-rework).
 
 ### Project structure & used technologies
-- Ember (v3)
+- Frontend:
+    - Ember (v3)
+    - Deployed using: [Dockerfile](Dockerfile)
 - Favicon:
     - Location: [public/favicon.png](public/favicon.png)
-    - Handled by: `ember-cli-favicon`
--
+    - Handled by: `Denperidge-Redpencil/ember-cli-favicon`
+    - Configured in: [ember-cli-build.js](ember-cli-build.js)
+- Dynamic OpenGraph:
+    - Handled by: `ember-cli-head` & [app/utils.js](app/utils.js)
+    - Configured in: [app/routes/](app/routes/)
 
