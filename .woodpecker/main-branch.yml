@@ -2,7 +2,7 @@ pipeline:
   build:
     image: plugins/docker
     settings:
-      repo: ${CI_REPO}
+      repo: denperidge/semantic.works
       tags: latest
     secrets: [ docker_username, docker_password ]
 when:
