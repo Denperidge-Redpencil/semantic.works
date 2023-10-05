@@ -1,31 +1,21 @@
 <HeadLayout />
 
 <header>
-  <div class="header">
-    <div class="search" style="visibility: hidden">
-      {{!-- Hide the search since we don't have a search function yet --}}
-      <img src="{{ROOTURL}}/assets/images/search.png" class="img" alt="Search icon" />
-      <div class="text">Search the docs...</div>
-    </div>
-
-    <LinkTo @route="index">
-      <div class="logo">
+    <LinkTo @class="logo" @route="index">
         <span>Semantic</span>
         <img src="{{ROOTURL}}/assets/images/logo.png" alt="Semantic works logo" />
         <span>Works</span>
-      </div>
     </LinkTo>
 
     <nav>
       <ul>
-        <li><LinkTo @route="docs">Documentation</LinkTo></li>
-        <li><LinkTo @route="tutorial">Tutorial</LinkTo></li>
-        <li><a href="https://mu.semte.ch/">Blog</a></li>
-        <li><a href="https://github.com/mu-semtech/">GitHub</a></li>
+        <LinkTo @route="docs"><li>Documentation</li></LinkTo>
+        <LinkTo @route="tutorial"><li>Tutorial</li></LinkTo>
+        <a href="https://mu.semte.ch/"><li>Blog</li></a>
+        <a href="https://github.com/mu-semtech/"><li>GitHub</li></a>
       </ul>
     </nav>
 
-  </div>
   <Slant/>
 </header>
 {{outlet}}
