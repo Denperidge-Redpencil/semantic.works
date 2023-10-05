@@ -1,0 +1,141 @@
+.sw-catchy {
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 50px;
+    font-weight: 100;
+    font-style: normal;
+
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sw-btn-big-rounded-w {
+    border: 1px solid #000000;
+    border-radius: 5px;
+
+    padding: 15px;
+    margin: 20px;
+
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 500;
+    font-style: normal;
+
+    text-decoration: none;
+}
+
+.sw-btn-big-rounded-w:hover {
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+
+}
+
+.sw-btn-big-rounded-b {
+    border: 1px solid #000000;
+    border-radius: 5px;
+
+    background-color: #000000;
+
+    padding: 15px;
+    margin: 20px;
+
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 500;
+    font-style: normal;
+
+    text-decoration: none;
+}
+
+.sw-btn-big-rounded-b:hover {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+.sw-info {
+    color: #000000;
+
+    padding: 15px;
+
+    .header {
+        font-family: "Roboto";
+        font-size: 21px;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    .body {
+        line-height: 180%;
+
+        color: #000000;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: 100;
+        font-style: normal;
+    }
+
+}
+
+.sw-btn-small-w {
+    border: 1px solid #000000;
+
+    padding: 15px 50px;
+    margin: 20px;
+
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.sw-btn-small-w:hover {
+    cursor: pointer;
+}
+
+.sw-btn-small-b {
+    border: 1px solid #000000;
+
+    padding: 15px 50px;
+    margin: 20px;
+    background-color: #000000;
+
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.sw-btn-small-b:hover {
+    cursor: pointer;
+}
+
+.sw-btn-small-r {
+    padding: 15px 50px;
+    margin: 20px;
+    background-color: #f44336;
+
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.sw-btn-small-r:hover {
+    cursor: pointer;
+}
+
+
+.sw-img-fill{
+    width: 100%;
+  }
+  
