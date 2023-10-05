@@ -1,174 +1,104 @@
 <main>
-  <section>
-    <div class="sw-catchy">
+
+  <h1 class="sr-only">Semantic.Works</h1>
+
+  <section class="sw-center">
+    <h2 class="sr-only">Introduction</h2>
+
+    <br>
+    <br>
+
+    <p class="sw-catchy">
       A microservice framework
       <br>
       powered by Linked Data
-      <br>
-      <br>
-      <LinkTo @route="tutorial" class="sw-btn-big-rounded-w">GET STARTED</LinkTo>
-      <LinkTo @route="docs" class="sw-btn-big-rounded-b">GO TO DOCS</LinkTo>
-    </div>
+    </p>
+
+
+    <LinkTo @route="tutorial" class="sw-btn-big-rounded-w">GET STARTED</LinkTo>
+    <LinkTo @route="docs" class="sw-btn-big-rounded-b">GO TO DOCS</LinkTo>
+
   </section>
+
+
+  <section class="sw-info">
+    <h2 class="sr-only">About</h2>
+
+    <section>
+      <h3>Fuelled by Linked Data</h3>
+      <p>
+        Semantic.works offers a lightweight microservice framework that works in practice. <br>
+        Microservices communicate through a shared semantic model resulting in a maintainable and extendable
+        architecture
+        instead of the typical microservice chaos.
+      </p>
+    </section>
+
+    <section>
+      <h3>Based on open standards</h3>
+      <p>
+        Semantic.works envisions an open internet. <br>
+        It depends on open standards used in modern web application development such as HTTP, JSONAPI and SPARQL. All
+        tools
+        and components are open source and available to the community. Introducing vendor lock-in is not the ambition at
+        all.
+      </p>
+    </section>
+
+    <section>
+      <h3>Building on the shoulders of giants</h3>
+      <p>
+        Semantic.works doesn’t reinvent the wheel.<br>
+        The framework imposes a couple of requirements, but mainly builds on well-known tools and frameworks such as
+        Docker,
+        ElasticSearch and Express that have a proven track record in production environments.
+      </p>
+    </section>
+
+    <section>
+      <h3>Pick the right tool for the job</h3>
+      <p>
+        Microservices tend to be small and simple, just fulfulling one single job in an isolated environment. The user
+        has
+        the flexibility to select the best tool for the job for each single microservice. Be it a web service in Ruby,
+        JavaScript or even Lisp. It also creates the opportunity to easily experiment with new technologies in existing
+        applications.
+
+      </p>
+    </section>
+
+    <section>
+      <h3>Raising developer productivity</h3>
+      <p>
+        Developers should spend their valuable time solving business-specific problems, not implementing the same boiler
+        plate code over and over again. Semantic.works offers tooling, templates and reusable components in various
+        languages in order to drive developer productivity to unprecedented levels.
+
+      </p>
+    </section>
+
+    <section>
+      <h3>Reuse that works in practice</h3>
+      <p>
+        Based on standardized semantic models, many backend services are easy to reuse. Semantic.works offers services
+        for
+        login, registration, regular resource listing and creation, migrations, exports, etc. All of those service work
+        out-of-the-box. Some require a bit of configuration, but no need to master all the languages they're written in.
+      </p>
+    </section>
+  </section>
+
+
 
   <section>
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Fuelled by Linked Data</p>
-          <p class="body">
-            Semantic.works offers a lightweight microservice framework that works in practice. <br>
-            Microservices communicate through a shared semantic model resulting in a maintainable and extendable architecture instead of the typical microservice chaos.
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Based on open standards</p>
-          <p class="body">
-            Semantic.works envisions an open internet. <br>
-            It depends on open standards used in modern web application development such as HTTP, JSONAPI and SPARQL. All tools and components are open source and available to the community. Introducing vendor lock-in is not the ambition at all.
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Building on the shoulders of giants</p>
-          <p class="body">
-            Semantic.works doesn’t reinvent the wheel.<br>
-            The framework imposes a couple of requirements, but mainly builds on well-known tools and frameworks such as Docker, ElasticSearch and Express that have a proven track record in production environments.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Pick the right tool for the job</p>
-          <p class="body">
-            Microservices tend to be small and simple, just fulfulling one single job in an isolated environment. The user has the flexibility to select the best tool for the job for each single microservice. Be it a web service in Ruby, JavaScript or even Lisp. It also creates the opportunity to easily experiment with new technologies in existing applications.
-            <br>
-            <br>
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Raising developer productivity</p>
-          <p class="body">
-            Developers should spend their valuable time solving business-specific problems, not implementing the same boiler plate code over and over again. Semantic.works offers tooling, templates and reusable components in various languages in order to drive developer productivity to unprecedented levels.
-            <br>
-            <br>
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="sw-info">
-          <p class="header">Reuse that works in practice</p>
-          <p class="body">
-            Based on standardized semantic models, many backend services are easy to reuse. Semantic.works offers services for login, registration, regular resource listing and creation, migrations, exports, etc. All of those service work out-of-the-box. Some require a bit of configuration, but no need to master all the languages they're written in.
-            <br>
-            <br>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {{!-- Test buttons
-                                    <div class="pure-g">
-                                    <div class="pure-u-1-3">
-                                    <span class="sw-btn-small-b">BUTTON</span>
-                                    </div>
-                                    <div class="pure-u-1-3">
-                                    <span class="sw-btn-small-w">BUTTON</span>
-                                    </div>
-                                    <div class="pure-u-1-3">
-                                    <span class="sw-btn-small-r">IMPORTANT</span>
-                                    </div>
-                                    </div>
-                                    --}}
-
-  </section>
-
-  <section>
-    <div class="sw-catchy">
-      Trusted and used by
+    <h2 class="sw-catchy">Trusted and used by</h2>
       <br>
-      <img src='assets/images/clients.png' class="sw-img-fill" alt="Logos from the European Commision, Vlaamse Overheid (Flemish government), Big Data Europe, MOOF IT CONSULTANCY bvba and redpencil.io" />
-    </div>
+
+     <img src='assets/images/clients.png' class="sw-img-fill"
+        alt="Logos from the European Commision, Vlaamse Overheid (Flemish government), Big Data Europe, MOOF IT CONSULTANCY bvba and redpencil.io" />
   </section>
 
-  {{!-- Code samples
-  <div class="sw-segment">
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="sw-info">
-          <p class="header">Lorem ipsum dolor sit amet.</p>
-          <p class="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in nisi nec lectus semper luctus eget ut nibh. Fusce aliquet at velit eget tempor. Nam ac arcu sem. Nunc dictum, urna ac pellentesque luctus, orci purus consequat dui, lacinia malesuada orci nisl eu ex. Quisque egestas mi sapien. Maecenas placerat sodales gravida. Donec id dui mi.
-            <br>
-            Mauris tempus ultrices leo eu porta. Morbi pulvinar varius nunc, in eleifend lectus vulputate condimentum.
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-2">
-        <div class="sw-info">
-          <p class='sw-file-path'>something/other.file</p>
-          <IvyCodemirror @value={{this.codemirrorValue}} @options={{this.codemirrorSettings}}/>
-        </div>
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="sw-info">
-          <p class='sw-file-path'>count-service/web.rb</p>
-          <IvyCodemirror @value={{this.rubyMirrorValue}} @options={{this.rubyMirrorSettings}}/>
-        </div>
-      </div>
-      <div class="pure-u-1-2">
-        <div class="sw-info">
-          <p class="header">Lorem ipsum dolor sit amet.</p>
-          <p class="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in nisi nec lectus semper luctus eget ut nibh. Fusce aliquet at velit eget tempor. Nam ac arcu sem. Nunc dictum, urna ac pellentesque luctus, orci purus consequat dui, lacinia malesuada orci nisl eu ex. Quisque egestas mi sapien. Maecenas placerat sodales gravida. Donec id dui mi.
-            <br>
-            Mauris tempus ultrices leo eu porta. Morbi pulvinar varius nunc, in eleifend lectus vulputate condimentum.
-          </p>
-        </div>
-      </div>
 
-    </div>
-
-  </div>
-  --}}
-
-  {{!--
-    <div class="sw-segment">
-    <div class="sw-catchy">
-    Made It This Far?
-    <br>
-    Why Not Give It a Try...
-    <br><br>
-    </div>
-    <div class="pure-g">
-    <div class="pure-u-1-3">
-    </div>
-    <div class="pure-u-1-3">
-    <div class="sw-terminal">
-    <div class="contents">
-    <span class='cash'>$</span> git clone https://github.com/mu-semtech/mu-project<br><br>
-
-    <span class='cash'>$</span> cd mu-project<br><br>
-
-    <span class='cash'>$</span> docker-compose up<br><br>
-    </div>
-    </div>
-    </div>
-    <div class="pure-u-1-3">
-    </div>
-    </div>
-
-    </div>
-    --}}
 
 </main>
 {{outlet}}

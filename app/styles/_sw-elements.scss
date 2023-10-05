@@ -9,6 +9,10 @@
     margin-top: 10px;
 }
 
+.sw-center {
+    text-align: center;
+}
+
 .sw-btn-big-rounded-w {
     border: 1px solid #000000;
     border-radius: 5px;
@@ -62,16 +66,33 @@
 .sw-info {
     color: #000000;
 
-    padding: 15px;
+    /*
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    
+    > * {
+        margin: auto;
+        min-width: 300px;
+        flex-basis: 33%;
+        flex: 1;
 
-    .header {
+    }
+
+
+    h3 {
         font-family: "Roboto";
         font-size: 21px;
         font-weight: 600;
         font-style: normal;
     }
 
-    .body {
+    p {
         line-height: 180%;
 
         color: #000000;
