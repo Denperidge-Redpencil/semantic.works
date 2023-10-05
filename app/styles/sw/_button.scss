@@ -1,0 +1,56 @@
+.sw-btn {
+    display: inline-block;
+
+    font-family: "Roboto";
+    font-style: normal;
+
+    text-decoration: none;
+    
+    border: 1px solid #000000;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline-offset: 2px;
+        outline-width: 2px;
+    }
+
+    &.big {
+        padding: 15px;
+        margin: 20px;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    &.small {
+        padding: 15px 50px;
+        margin: 20px;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    &.white {
+        color: #000000;
+        &:hover {
+            color: #ffffff;
+            background-color: #000000;
+        }
+    }
+
+    &.red {
+        background-color: #f44336;
+    }
+
+    &.black {
+        color: #ffffff;
+        background-color: #000000;
+        &:hover {
+            color: #000000;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+        }
+    }
+}
+

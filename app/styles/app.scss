@@ -4,7 +4,9 @@
 @import "header";
 @import "loading";
 @import "sw-docs";
-@import "sw-elements";
+@import "sw/button";
+@import "sw/info";
+@import "sw/other";
 
 main {
   padding-left: 20%;
