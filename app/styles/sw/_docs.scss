@@ -1,23 +1,73 @@
-
 .sw-docs{
+  padding: 0;
 
-  padding: 0 20px;
-  display: flex;
+  display: grid;
+  // Desktop
+  @media (min-width: 1000px) {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
 
-  #docview, #select-repo {
-    box-sizing: border-box;
+    #select-repo {
+      padding: 0px 30px;
+    }
 
+    #docview {
+      border-left: #000000 solid 1px;
+      padding: 0px 30px;
+    }
+
+    .desktop {
+      display: initial;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+  // Mobile
+  @media (max-width: 1000px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+
+    #select-repo {
+      legend {
+        width: 100%;
+      }
+      h3 {
+        text-align: center;
+
+        text-decoration: underline;
+        cursor: pointer;
+        color: red;
+      }
+      
+      ul {
+        display: none;
+      }
+    
+      
+      
+    }
+
+    #docview {
+      padding: 0 20px;
+    }
+
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: initial;
+    }
   }
 
+
+
   #select-repo {
-    flex-basis: 20%;
     font-family: "Open Sans";
     font-size: 20px;
     font-weight: 600;
     font-style: normal;
-    padding-right: 20px;
     line-height: 180%;
-
 
     .category {
       border: 0;
@@ -31,45 +81,6 @@
     }
   }
 
+  
 
-  #docview {
-    flex: 1;
-    border-left: #000000 solid 1px;
-    padding: 40px;
-    padding-bottom: 100px;
-  }
-
-
-  @media (max-width: 1000px) {
-    flex-wrap: wrap;
-    
-    #select-repo, #docview {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-    #docview {
-      padding: 0;
-      border: none;
-    }
-
-    #select-repo {
-      flex-basis: 100%;
-
-      legend {
-        width: 100%;
-      }
-
-      h3 {
-        text-align: center;
-
-        text-decoration: underline;
-        cursor: pointer;
-        color: red;
-      }
-      ul {
-        display: none;
-      }
-    }
-
-  }
 }

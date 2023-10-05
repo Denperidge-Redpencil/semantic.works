@@ -3,7 +3,8 @@ import { action } from '@ember/object';
 
 export default class DocsController extends Controller {
     runAgainstEveryCategory(callback) {
-        let categories = document.querySelectorAll(".category > ul");
+        let categories = document.querySelectorAll(".mobile .category > ul");
+        console.log(categories)
         for (let i=0; i < categories.length; i++) {
             callback(categories[i]);
         }

@@ -1,6 +1,8 @@
 <main class="sw-docs">
     <h1 class="sr-only">Documentation</h1>
-    <aside id="select-repo">
+    {{#each (array "mobile" "desktop") as |class|}}
+
+    <aside id="select-repo" class={{class}}>
         <h2 class="sr-only">Categories</h2>
         <!--<MenuItems @docTree={{model}} @level={{0}}/>-->
         {{#each @model as |category|}}
@@ -8,16 +10,19 @@
                 <legend>
                     <h3 {{on "click" (fn this.displayCategory category.name)}}>{{category.name}}</h3>
                 </legend>
-                <ul id={{category.name}}>
-                    {{#each category.value as |repo|}}
-                    <LinkTo @route="docs.doc" @model={{repo.name}}>
-                        <li>{{repo.name}}</li>
-                    </LinkTo>
-                    {{/each}}
-                </ul>
+                    <ul id={{category.name}} class={{class}}>
+                        {{#each category.value as |repo|}}
+                        <LinkTo @route="docs.doc" @model={{repo.name}}>
+                            <li>{{repo.name}}</li>
+                        </LinkTo>
+                        {{/each}}
+                    </ul>
             </fieldset>
         {{/each}}
-    </aside>
+        </aside>
+    {{/each}}
+
+
     <article id="docview">
         {{outlet}}
     </article>
